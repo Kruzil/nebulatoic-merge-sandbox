@@ -2,3 +2,4 @@
 
 - Arrow keys move.
 - Space jumps.
+- C crouches.
