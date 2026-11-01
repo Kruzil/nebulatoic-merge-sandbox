@@ -1,0 +1,19 @@
+name: Sandbox CI
+on:
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  ci:
+    name: ci
+    runs-on: ubuntu-latest
+    steps:
+      # actions/checkout v4.2.2: immutable commit pin.
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Build check (syntax of every source module)
+        run: for f in src/*.js; do node --check "$f"; done
+      - name: Tests
+        run: node --test test/*.test.mjs
