@@ -1,0 +1,3 @@
+# Governance paths need the human owner. Low-risk src/test/docs paths do not.
+/.github/ @Kruzil
+/CODEOWNERS @Kruzil
